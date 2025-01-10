@@ -181,7 +181,9 @@ export class KilpiCore<
           return result; // Passed
         } catch (e) {
           if (!(e instanceof KilpiError.PermissionDenied)) {
-            console.warn(`createQuery safe() method errored with unexpected error: ${e}`);
+            `protected query errored with unexpected error: ${e} (${
+              e instanceof Error ? e.message : typeof e
+            })`;
           }
           return null;
         }
@@ -197,7 +199,11 @@ export class KilpiCore<
           return result;
         } catch (e) {
           if (!(e instanceof KilpiError.PermissionDenied)) {
-            console.warn(`createQuery safe() method errored with unexpected error: ${e}`);
+            console.warn(
+              `protected query errored with unexpected error: ${e} (${
+                e instanceof Error ? e.message : typeof e
+              })`
+            );
           }
           throw e;
         }
