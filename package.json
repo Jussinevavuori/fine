@@ -1,7 +1,7 @@
 {
   "name": "kilpi",
   "description": "Fine-grained authorization",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "author": "Jussi Nevavuori <nevavuori.jussi@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -27,7 +27,8 @@
   "scripts": {
     "build": "bun run build.ts",
     "dev": "bun run --watch build.ts --watch ",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "bun run build",
+    "release": "bun run release.ts"
   },
   "type": "module"
 }

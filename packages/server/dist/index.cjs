@@ -116,7 +116,7 @@ var RULE_KEY_SEPARATOR = ":";
 function getRuleByKey(ruleset, key) {
   const keys = key.split(RULE_KEY_SEPARATOR);
   const rule = keys.reduce((index, k) => index[k], ruleset);
-  if (!("getPermission" in rule) || !("getNarrowedSubject" in rule) || typeof rule.getPermission !== "function" || typeof rule.getNarrowedSubject !== "function") {
+  if (typeof rule !== "function" || !("guard" in rule) || typeof rule.guard !== "function") {
     throw new KilpiError.Internal(`Rule not found: "${key}"`);
   }
   return rule;
@@ -4228,7 +4228,7 @@ class KilpiCore {
           return result;
         } catch (e) {
           if (!(e instanceof KilpiError.PermissionDenied)) {
-            console.warn(`createQuery safe() method errored with unexpected error: ${e}`);
+            `protected query errored with unexpected error: ${e} (${e instanceof Error ? e.message : typeof e})`;
           }
           return null;
         }
@@ -4240,7 +4240,7 @@ class KilpiCore {
           return result;
         } catch (e) {
           if (!(e instanceof KilpiError.PermissionDenied)) {
-            console.warn(`createQuery safe() method errored with unexpected error: ${e}`);
+            console.warn(`protected query errored with unexpected error: ${e} (${e instanceof Error ? e.message : typeof e})`);
           }
           throw e;
         }
