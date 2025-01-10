@@ -1,0 +1,50 @@
+{
+  "name": "@kilpi/react",
+  "description": "Kilpi React integration",
+  "bugs": "https://github.com/jussinevavuori/kilpi/issues",
+  "homepage": "https://github.com/jussinevavuori/kilpi#readme",
+  "version": "0.2.0",
+  "author": "Jussi Nevavuori <nevavuori.jussi@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jussinevavuori/kilpi.git"
+  },
+  "dependencies": {
+    "zod": "^3.24.1",
+    "@kilpi/core": "workspace:*",
+    "@kilpi/client": "workspace:*",
+    "@kilpi/server": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.10",
+    "@types/react": "^19.0.3",
+    "chalk": "^5.4.1"
+  },
+  "exports": {
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "import": "./dist/client/index.jsx",
+      "require": "./dist/client/index.cjs"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "import": "./dist/server/index.jsx",
+      "require": "./dist/server/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "bun",
+    "fine-grained",
+    "authorization",
+    "abac",
+    "rbac"
+  ],
+  "license": "MIT",
+  "type": "module"
+}

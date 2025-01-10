@@ -1,0 +1,38 @@
+{
+  "name": "@kilpi/core",
+  "description": "Fine-grained authorization core library",
+  "bugs": "https://github.com/jussinevavuori/kilpi/issues",
+  "homepage": "https://github.com/jussinevavuori/kilpi#readme",
+  "version": "0.2.0",
+  "author": "Jussi Nevavuori <nevavuori.jussi@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jussinevavuori/kilpi.git"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.10",
+    "chalk": "^5.4.1"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "bun",
+    "fine-grained",
+    "authorization",
+    "abac",
+    "rbac"
+  ],
+  "license": "MIT",
+  "type": "module"
+}
