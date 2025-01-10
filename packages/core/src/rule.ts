@@ -143,12 +143,7 @@ export function getRuleByKey<
 
   // Ensure rule found and has required properties -- this check is enough for us
   // to be sure that the rule is a valid rule.
-  if (
-    !("getPermission" in rule) ||
-    !("getNarrowedSubject" in rule) ||
-    typeof rule.getPermission !== "function" ||
-    typeof rule.getNarrowedSubject !== "function"
-  ) {
+  if (typeof rule !== "function" || !("guard" in rule) || typeof rule.guard !== "function") {
     throw new KilpiError.Internal(`Rule not found: "${key}"`);
   }
 
